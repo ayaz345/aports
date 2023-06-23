@@ -4,10 +4,10 @@ import asyncore
 class FakeSMTPServer(smtpd.SMTPServer):
     """A Fake smtp server"""
 
-    def __init__(*args, **kwargs):
-        smtpd.SMTPServer.__init__(*args, **kwargs)
+    def __init__(self, **kwargs):
+        smtpd.SMTPServer.__init__(*self, **kwargs)
 
-    def process_message(*args, **kwargs):
+    def process_message(self, **kwargs):
         pass
 
 if __name__ == "__main__":
